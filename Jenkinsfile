@@ -22,7 +22,8 @@ pipeline {
       steps {
         sh '''node server.js &
 sleep 5 && 
-curl localhost:8080 && if [[ "x$?" == "x0" ]]; then    echo good; else exit 1; fi'''
+curl localhost:8080 && if [[ "x$?" == "x0" ]]; then    echo good; else exit 1; fi
+curl localhost:8080'''
       }
     }
 
@@ -34,7 +35,7 @@ curl localhost:8080 && if [[ "x$?" == "x0" ]]; then    echo good; else exit 1; f
 
     stage('Slack') {
       steps {
-        slackSend(channel: 'yg-channel-private', iconEmoji: ';-)', notifyCommitters: true, attachments: 'message: \'STARTED: Job ${env.JOB_NAME} [${env.BUILD_NUMBER}] (${env.BUILD_URL})\'', blocks: 'block', color: '#439FE0')
+        slackSend(channel: 'yg-channel-private', iconEmoji: ';-)', notifyCommitters: true, attachments: ' json.toString())', blocks: 'block', color: '#439FE0')
       }
     }
 
