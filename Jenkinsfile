@@ -7,5 +7,11 @@ pipeline {
       }
     }
 
+    stage('Build Code') {
+      steps {
+        sh 'npm install'
+      }
+    }
+
   }
 }
