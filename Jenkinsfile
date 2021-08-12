@@ -44,7 +44,7 @@ curl localhost:8080 && if [[ "x$?" == "x0" ]]; then    echo good; else exit 1; f
 
         stage('Slack') {
           steps {
-            slackSend(username: 'yoguez@gmail.com', channel: 'yg-channel-private', color: '#E8E8E8', attachments: '$attachments', blocks: '$blocks')
+            slackSend(username: 'yoguez@gmail.com', channel: 'yg-channel-private', color: '#E8E8E8', attachments: '$attachments', blocks: '$blocks', notifyCommitters: true, replyBroadcast: true, sendAsText: true)
           }
         }
 
