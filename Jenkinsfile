@@ -36,7 +36,7 @@ curl localhost:8080 && if [[ "x$?" == "x0" ]]; then    echo good; else exit 1; f
 
     stage('Package Code') {
       steps {
-        sh 'tar -czvf node.tar.gz '
+        sh 'tar -czvf node.tar.gz *'
       }
     }
 
