@@ -34,7 +34,7 @@ curl localhost:8080 && if [[ "x$?" == "x0" ]]; then    echo good; else exit 1; f
 
     stage('Slack') {
       steps {
-        slackSend(channel: 'yg-channel-private', iconEmoji: ';-)', notifyCommitters: true)
+        slackSend(channel: 'yg-channel-private', iconEmoji: ';-)', notifyCommitters: true, attachments: 'message: \'STARTED: Job ${env.JOB_NAME} [${env.BUILD_NUMBER}] (${env.BUILD_URL})\'', blocks: 'message: \'STARTED: Job ${env.JOB_NAME} [${env.BUILD_NUMBER}] (${env.BUILD_URL})\'')
       }
     }
 
