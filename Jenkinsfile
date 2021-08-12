@@ -35,7 +35,7 @@ curl localhost:8080'''
 
     stage('Slack') {
       steps {
-        slackSend(channel: 'yg-channel-private', iconEmoji: ';-)', notifyCommitters: true, attachments: ' json.toString())', blocks: 'block', color: '#439FE0')
+        slackSend(channel: 'yg-channel-private', iconEmoji: ';-)', notifyCommitters: true, color: '#439FE0')
       }
     }
 
