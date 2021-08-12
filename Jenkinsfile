@@ -6,9 +6,10 @@ pipeline {
 
   }
   stages {
-    stage('Check Out Code') {
+    stage('Chewock Out Code') {
       steps {
         git(url: 'https://github.com/YoavGUEZfromBYNET/NodeJS-EmptySiteTemplate.git', branch: 'master', changelog: true, poll: true)
+        cleanWs()
       }
     }
 
