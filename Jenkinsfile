@@ -8,7 +8,7 @@ pipeline {
   stages {
     stage('Check Out Code') {
       steps {
-        git(url: 'https://github.com/lidorg-dev/NodeJS-EmptySiteTemplate.git', branch: 'master', poll: true, changelog: true)
+        git(url: ' https://github.com/YoavGUEZfromBYNET/NodeJS-EmptySiteTemplate.git', branch: 'master', poll: true, changelog: true)
       }
     }
 
