@@ -65,7 +65,7 @@ curl localhost:8080 && if [[ "x$?" == "x0" ]]; then    echo good; else exit 1; f
 
         stage('Slack') {
           steps {
-            notifySlack(currentBuild.result)
+            slackSend (channel: slack_channel, color: colorCode, message: "${env.JOB_NAME} #${env.BUILD_NUMBER} - " + buildStatus + " Started By ${env.BUILD_USER} (${env.BUILD_URL})")
           }
         }
 
