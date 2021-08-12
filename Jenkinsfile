@@ -33,9 +33,9 @@ curl localhost:8080 && if [[ "x$?" == "x0" ]]; then    echo good; else exit 1; f
       }
     }
 
-    stage('Slack') {
+    stage('Package Code') {
       steps {
-        slackSend(channel: 'yg-channel-private', iconEmoji: ';-)', notifyCommitters: true, color: '#439FE0')
+        sh 'tar -czvf node.tar.gz '
       }
     }
 
